@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<title>Family Connection Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='w3schools.css')}}">
+<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='fa.css')}}">
+
+
+<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='Font awesome.css')}}">
+<style>
+@font-face{font-family:'FontAwesome';src:url('{{url_for('static',filename='fontawesome-webfont.eot')}}');
+src:url('{{url_for('static',filename='fontawesome-webfont.eot')}}') format('embedded-opentype'),
+url('{{url_for('static',filename='fontawesome-webfont.woff2')}}') format('woff2'),
+url('{{url_for('static',filename='fontawesome-webfont.woff')}}') format('woff'),
+url('{{url_for('static',filename='fontawesome-webfont.ttf')}}') format('truetype');
+font-weight:normal;font-style:normal}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url({{url_for('static',filename='yQiAaD56cjx1AooMTSghGfY6323mHUZFJMgTvxaG2iE.woff2')}}) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(0dTEPzkLWceF7z0koJaX1A.woff2 format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+/* Full height image header */
+.bgimg-1 {
+    background-position: center;
+    background-size: 100% 100%;
+    background-image:url("{{url_for('static',filename='grey-background-jpg-export_1.jpg')}}");
+    min-height: 100%;
+}
+.w3-bar .w3-button {
+    padding: 16px;
+}
+
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), 
+  url({{url_for('static',filename='2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2')}}) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+</style>
+<body class="w3-dark-grey">
+<div class="w3-top">
+  <div class="w3-bar w3-gray w3-card-2" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide">
+	<i class="small material-icons">settings</i>Settins</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+	  <a href="/showprof/{{user}}" class="w3-bar-item w3-button" target="_self">
+	  <i class="small material-icons">assignment_ind</i> MyProfile</a>
+      <a href="/index1" class="w3-bar-item w3-button">
+	  <i class="small material-icons">power_settings_new</i>Logout</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars w3-padding-right w3-padding-left"></i>
+    </a>
+  </div>
+</div><br><br><br>
+	<div class="w3-container w3-content w3-dark-grey">
+	<div class="w3-container w3-content w3-dark-lime">
+	{% if groupn %}
+		<h2>Join a group</h2>
+		<br>
+	{% else %}
+	    <h2>Join a group OR visit a user</h2>
+		<br>
+	{% endif %}
+		<p>
+		<div class="w3-bar w3-border">
+		 {% for x in groupn %}
+		  <h3>{{x[0]|title}}</h3>
+		  {% set family = x[0] %}
+	  <div class="w3-dropdown-hover w3-center">
+	  <button type="submit" class="btn btn-primary btn-block btn-large w3-teal">Join</button>
+	  <div class="w3-dropdown-content w3-white w3-card-12 w3-border">
+	  <form action="/join/{{user}}" method="post"> 
+<p><input class="w3-input w3-border" type="text" placeholder="Confirm group name" name="groupn">
+	  <div class="w3-bar w3-border">
+      <button type="submit" class="w3-teal w3-border w3-center">JOIN</button>
+	   </div></p></form> 
+	   </div>
+	   </div><br>{% endfor %}
+	   
+	   {% for y in searchu %}
+		  <h3>{{y[0]|title}}</h3>
+		  {% set family = y[0] %}
+	  <div class="w3-dropdown-hover w3-center">
+	  <button type="submit" class="btn btn-primary btn-block btn-large w3-teal">Visit</button>
+	  <div class="w3-dropdown-content w3-white w3-card-12 w3-border">
+	  <form action="/visit/{{user}}/{{y[0]}}" method="post"> 
+<p><input class="w3-input w3-border" type="text" placeholder="Confirm group name" name="groupn">
+	  <div class="w3-bar w3-border">
+      <button type="submit" class="w3-teal w3-border w3-center">VISIT</button>
+	   </div></p></form> 
+	   </div>
+	   </div><br>{% endfor %}
+	   
+	   {% for y in addmem%}
+	   <h3>{{y[0]|title}}</h3>
+		  {% set family = y[0] %}
+	  <div class="w3-dropdown-hover w3-center">
+	  <button type="submit" class="btn btn-primary btn-block btn-large w3-teal">Add</button>
+	  <div class="w3-dropdown-content w3-white w3-card-12 w3-border">
+	  <form action="/add/{{user}}" method="post"> 
+<p><input class="w3-input w3-border" type="text" placeholder="Confirm group name" name="usern">
+	  <div class="w3-bar w3-border">
+      <button type="submit" class="w3-teal w3-border w3-center">Add</button>
+	   </div></p></form> 
+	   </div>
+	   </div><br>{% endfor %}
+	   
+ <p style="color:white;"><h3>{{message}}</h3></p>
+	   </div></p>   
+	</div>  
+	</div>
+</body>
+</html>
+
+	

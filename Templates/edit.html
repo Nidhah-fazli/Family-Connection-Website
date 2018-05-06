@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<title>Family Connection Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='w3schools.css')}}">
+<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='fa.css')}}">
+
+
+<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='Font awesome.css')}}">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+/* Full height image header */
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image:url("{{url_for('static',filename='Clear-Family-Shadows.jpg')}}");
+    min-height: 100%;
+}
+.w3-bar .w3-button {
+    padding: 16px;
+}
+ .lead
+      {
+        background-color:rgba(255,255,255,0.3);
+        border-radius:100px;
+        box-shadow:rgba(0,0,0,0.2) 0 1px 3px;
+      }
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), 
+  url({{url_for('static',filename='2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2')}}) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+.lead1
+      {
+        background-color:rgba(255,255,255,0.3);
+        border-radius:100px;
+        box-shadow:rgba(0,0,0,0.2) 0 1px 3px;
+      }
+</style>
+<body class="w3-gray">
+ 
+	<div class="w3-top w3-dark-grey">
+  <div class="w3-bar w3-dark-grey w3-card-2" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide">
+	<i class="medium material-icons">settings</i>Settings</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+	  <a href="/showprof/{{user}}" class="w3-bar-item w3-button" target="_self">
+	  <i class="medium material-icons">supervisor_account</i>My Profile</a>
+      <a href="/index1" class="w3-bar-item w3-button">
+	  <i class="medium material-icons">power_settings_new</i> Logout</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars w3-padding-right w3-padding-left"></i>
+    </a>
+  </div>
+</div>
+
+<div class="w3-container w3-content lead1" style="max-width:1400px;min-height:700px;margin-top:80px">
+	<h2 class="w3-wide w3-center w3-text-black">Edit your Profile {{user|title}}</h2>
+	<form action="/update/{{user}}" target="_self" method="post">
+	<br><p><h3>Add birthdate</h3><input class="w3-input w3-border" type="text" name="bod"></p>
+	<p><h3>Add work</h3><input class="w3-input w3-border" type="text" name="work"></p>
+	<p><h3>Add studies</h3><input class="w3-input w3-border" type="text" name="stud"></p>
+	<p><h3>Add bio</h3><input class="w3-input w3-border" type="text" name="bio"></p>
+     
+    <p>
+          <button class="w3-btn w3-padding w3-teal w3-text-white" type="submit">Update
+          </button></form>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<title>Family Connection Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='w3schools.css')}}">
+<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='fa.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='bootstrap.css')}}">
+<link rel='stylesheet prefetch' href='{{url_for('static',filename='font.css')}}'>
+
+
+      <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+
+
+
+
+<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='Font awesome.css')}}">
+<style>
+@font-face
+{
+font-family:'FontAwesome';
+src:url('{{url_for('static',filename='fontawesome-webfont.eot')}}');
+src:url('{{url_for('static',filename='fontawesome-webfont.eot')}}') format('embedded-opentype'),
+url('{{url_for('static',filename='fontawesome-webfont.woff2')}}') format('woff2'),
+url('{{url_for('static',filename='fontawesome-webfont.woff')}}') format('woff'),
+url('{{url_for('static',filename='fontawesome-webfont.ttf')}}') format('truetype');
+font-weight:normal;font-style:normal}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url({{url_for('static',filename='yQiAaD56cjx1AooMTSghGfY6323mHUZFJMgTvxaG2iE.woff2')}}) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(0dTEPzkLWceF7z0koJaX1A.woff2 format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+/* Full height image header */
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image:url("{{url_for('static',filename='Big-tree-wallpaper-1794-x-1299.jpg')}}");
+    min-height: 100%;
+}
+.w3-bar .w3-button {
+    padding: 16px;
+}
+ .lead
+      {
+        background-color:rgba(255,255,255,0.7);
+        border-radius:100px;
+        box-shadow:rgba(0,0,0,0.2) 0 1px 3px;
+      }
+.lead1
+      {
+        background-color:rgba(150,250,100,0.5);
+        border-radius:100px;
+        box-shadow:rgba(0,0,0,0.2) 0 1px 3px;
+      }
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), 
+  url({{url_for('static',filename='2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2')}}) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+</style>
+<body class="bgimg-1>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar lead w3-card-2" id="myNavbar">
+    <div class="w3-right w3-hide-small">
+      <a href="#home" class="w3-bar-item w3-button"><b><font size="5">
+	  <i class="fa fa-github"></i>My Profile</font></b></a>
+      <a href="showlogin" class="w3-bar-item w3-button" target="_self">
+	  <i class="large material-icons">search</i><font size="5"><b> Update Tree</font></b></a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars w3-padding-right w3-padding-left"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+<div class="w3-display-middle lead1 w3-container">
+<div class="w3-content w3-round w3-center"><h2><b>Member</b></h2></div></div>
+</header>
+
+</body>
+</html>

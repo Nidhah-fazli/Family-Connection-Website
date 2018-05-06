@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<title>Family Connection Website</title>
+<body>
+<h1>{{message}}</h1>
+<p><h4>Create now!</h4></p>
+		<p><div class="w3-container w3-center">
+	<div class="w3-dropdown-hover w3-center">
+    <button class="w3-button w3-teal w3-padding-large" title="Notifications">Create</button>     
+    <div class="w3-dropdown-content w3-white w3-card-12 w3-border">
+	<form action="/create/{{user}}" method="post">
+      <p><input class="w3-input w3-border" type="text" placeholder="Group name" name="groupn">
+	  <div class="w3-bar w3-border">
+      <button type="submit" class="w3-teal w3-border w3-center">CREATE</button>
+	   </div></p></form>
+	   </div>
+	   </div>
+	   </div>
+</body>
+</html>

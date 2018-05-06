@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<title>Family Connection Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='w3schools.css')}}">
+<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='fa.css')}}">
+
+
+<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='Font awesome.css')}}">
+<style>
+@font-face
+{
+font-family:'FontAwesome';
+src:url('{{url_for('static',filename='fontawesome-webfont.eot')}}');
+src:url('{{url_for('static',filename='fontawesome-webfont.eot')}}') format('embedded-opentype'),
+url('{{url_for('static',filename='fontawesome-webfont.woff2')}}') format('woff2'),
+url('{{url_for('static',filename='fontawesome-webfont.woff')}}') format('woff'),
+url('{{url_for('static',filename='fontawesome-webfont.ttf')}}') format('truetype');
+font-weight:normal;font-style:normal}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url({{url_for('static',filename='yQiAaD56cjx1AooMTSghGfY6323mHUZFJMgTvxaG2iE.woff2')}}) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(0dTEPzkLWceF7z0koJaX1A.woff2 format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+/* Full height image header */
+.bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image:url("{{url_for('static',filename='Clear-Family-Shadows.jpg')}}");
+    min-height: 100%;
+}
+.w3-bar .w3-button {
+    padding: 16px;
+}
+ .lead
+      {
+        background-color:rgba(255,255,255,0.3);
+        border-radius:100px;
+        box-shadow:rgba(0,0,0,0.2) 0 1px 3px;
+      }
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), 
+  url({{url_for('static',filename='2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2')}}) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-gray w3-card-2" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><img src="{{url_for('static',filename='asd.jpg')}}" alt="FCW Icon" style="width:25px;height:25px;"><b>  Family Connection Website</b></a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a href="#home" class="w3-bar-item w3-button">HOME</a>
+      <a href="showlogin" class="w3-bar-item w3-button" target="_self">
+	  <i class="small material-icons">input</i> SIGN IN</a>
+      <a href="showsignup" class="w3-bar-item w3-button" target="_self">
+	  <i class="small material-icons">person_pin</i> SIGN UP</a>
+      <a href="#about" class="w3-bar-item w3-button">
+	  <i class="small material-icons">info</i>ABOUT</a>
+      <a href="#contact" class="w3-bar-item w3-button">
+	  <i class="small material-icons">forum</i> FEEDBACK</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars w3-padding-right w3-padding-left"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidenav on small screens when clicking the menu icon -->
+<nav class="w3-sidenav w3-black w3-card-2 w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidenav">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-large w3-padding-16">Close </a>
+  <a href="#home" onclick="w3_close()">HOME</a>
+  <a href="showlogin" onclick="w3_close()">SIGN IN</a>
+  <a href="showsignup" onclick="w3_close()">SIGN UP</a>
+  <a href="#about" onclick="w3_close()">ABOUT</a>
+  <a href="#contact" onclick="w3_close()">FEEDBACK</a>
+</nav>
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-padding-xxlarge w3-text-white">
+    <span class="w3-jumbo w3-hide-small">Start something that matters</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
+    <form action="login" target="_self" method="post">
+        <p><input class="w3-input w3-border" type="text" name="usern" placeholder="User_Id" required name="User_Id"></p>
+        <p><input class="w3-input w3-border" type="password" name="password" placeholder="Password" required name="Password"></p>
+     
+    <p>
+          <button class="w3-btn w3-padding lead  w3-text-white" type="submit">LOGIN
+          </button>
+        </p>
+    </form>
+  </div> 
+  
+</header>
+
+<!-- About Section -->
+<div class="w3-container w3-padding-128" id="about">
+  <h3 class="w3-center">ABOUT THE WEBSITE</h3>
+  <p class="w3-center w3-large">Key features of our website</p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+      <i class="w3-jumbo large material-icons">view_carousel</i>
+      <p class="w3-large">Communicate</p>
+      <p>Have a discussion on the message board, chat in real time, start a blog or even send private messages.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="w3-jumbo large material-icons">today</i>
+      <p class="w3-large">Calendar</p>
+      <p>Never forget a birthday, anniversary or other important date. Send out invitations and keep track of who's coming and who's not.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="w3-jumbo large material-icons">group_work</i>
+      <p class="w3-large">Family Groups</p>
+      <p>Find your own relation groups to fall in.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="w3-jumbo large material-icons">games</i>
+      <p class="w3-large">Family Tree</p>
+      <p>Collabrativly discover your family history by building a family tree.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div class="w3-container w3-padding-128 w3-light-grey" id="contact">
+  <h3 class="w3-center">CONTACT</h3>
+  <p class="w3-center w3-large">Lets get in touch. Send us a feedback:</p>
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-half">
+      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Kerala, India</p>
+      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: <li>nidhahzeus@gmail.com</li>
+	  <li>riswanasharintk@gmail.com</li>
+	  <li>shananargiz22@gmail.com</li></p>
+      <br>
+      <form action="/feedback" method="post">
+        <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="name"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="email"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Feedback" required name="feeds"></p>
+        <p>
+          <button class="w3-btn w3-padding" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND FEEDBACK
+          </button>
+        </p>
+      </form>
+    </div>
+    <div class="w3-half">
+      <!-- Add Google Maps -->
+      <div id="googleMap" class="w3-greyscale-max" style="width:100%;height:510px;"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64">
+  <a href="#home" class="w3-btn w3-padding w3-light-grey w3-hover-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-text-indigo"></i>
+    <i class="fa fa-flickr w3-hover-text-red"></i>
+    <i class="fa fa-instagram w3-hover-text-purple"></i>
+    <i class="fa fa-twitter w3-hover-text-light-blue"></i>
+    <i class="fa fa-linkedin w3-hover-text-indigo"></i>
+  </div>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+ 
+<!-- Add Google Maps -->
+<script>
+function myMap()
+{
+  myCenter=new google.maps.LatLng(41.878114, -87.629798);
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+
+// Toggle between showing and hiding the sidenav when clicking the menu icon
+var mySidenav = document.getElementById("mySidenav");
+
+function w3_open() {
+    if (mySidenav.style.display === 'block') {
+        mySidenav.style.display = 'none';
+    } else {
+        mySidenav.style.display = 'block';
+    }
+}
+
+// Close the sidenav with the close button
+function w3_close() {
+    mySidenav.style.display = "none";
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</body>
+</html>

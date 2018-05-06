@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<title>Family Connection Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='w3schools.css')}}">
+<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='fa.css')}}">
+
+
+<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='Font awesome.css')}}">
+<style>
+@font-face{font-family:'FontAwesome';src:url('{{url_for('static',filename='fontawesome-webfont.eot')}}');
+src:url('{{url_for('static',filename='fontawesome-webfont.eot')}}') format('embedded-opentype'),
+url('{{url_for('static',filename='fontawesome-webfont.woff2')}}') format('woff2'),
+url('{{url_for('static',filename='fontawesome-webfont.woff')}}') format('woff'),
+url('{{url_for('static',filename='fontawesome-webfont.ttf')}}') format('truetype');
+font-weight:normal;font-style:normal}
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url({{url_for('static',filename='yQiAaD56cjx1AooMTSghGfY6323mHUZFJMgTvxaG2iE.woff2')}}) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url(0dTEPzkLWceF7z0koJaX1A.woff2 format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+body, html {
+    height: 100%;
+    line-height: 1.8;
+}
+/* Full height image header */
+.bgimg-1 {
+    background-position: center;
+    background-size: 100% 100%;
+    background-image:url("{{url_for('static',filename='grey-background-jpg-export_1.jpg')}}");
+    min-height: 100%;
+}
+.w3-bar .w3-button {
+    padding: 16px;
+}
+.lead1
+      {
+        background-color:rgba(255,255,255,0.3);
+        border-radius:100px;
+        box-shadow:rgba(0,0,0,0.2) 0 1px 3px;
+      }
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'),
+  url({{url_for('static',filename='2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2')}}) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+</style>
+<body class="bgimg-1">
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+<div class="w3-bar w3-gray w3-card-2" id="myNavbar">
+{% if visit %}
+
+{% else %}
+  <div class="w3-left w3-wide">
+  <div class="w3-dropdown-hover">
+    <button class="w3-button w3-teal w3-padding-large" title="Notifications">
+	<i class="small material-icons">settings</i>Settings</button>
+	<div class="w3-dropdown-content w3-white w3-card-12 w3-border">
+	<a href="/deleteg/{{user}}/{{groupn}}" class="w3-bar-item w3-button w3-wide">
+	{% if send %}
+	<div class="w3-content w3-center"><p>Requested to admin</p></div>
+	{% else %}
+	<div class="w3-content w3-center"><p>Delete Group</p></div>
+	{% endif %}
+	</div>
+	</a></div></div>
+{% endif %}
+	
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+	  <a href="/showprof/{{user}}" class="w3-bar-item w3-button" target="_self">
+	  <i class="small material-icons">assignment_ind</i> MyProfile</a>
+      
+      <a href="/posts/{{user}}/{{groupn}}" class="w3-bar-item w3-button">
+	  <i class="small material-icons">games</i> Posts</a>
+      <a href="/index1" class="w3-bar-item w3-button">
+	  <i class="small material-icons">power_settings_new</i> Logout</a>
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars w3-padding-right w3-padding-left"></i>
+    </a>
+  </div>
+</div>
+
+
+<!-- Header with full-height image -->
+<div class="w3-container w3-content lead1" style="max-width:1400px;min-height:600px;margin-top:80px">    
+  <div class="w3-row">
+    <!-- Left Column -->
+    <div class="w3-col l8 w3-margin-top w3-margin-left w3-margin-right">
+  <div class="w3-container w3-content lead1" style="min-height:560px">
+        <div class="w3-container">
+         <h2 class="w3-center">{{groupn|title}}</h2>
+{% if visit %}
+    <p class="w3-center"><img src="{{url_for('static',filename='pic.png')}}" class="w3-circle" style="height:320px;width:320px" alt="Avatar"></p>
+    <p><h3 class="w3-center">You are a member of this group!!</h3></p>
+{% else %}	
+		 <form action="/list/{{user}}" method="post">
+      <p><h3 class="w3-center">You are the admin of this group!!
+	  <br>Add members</h3>
+	  <div class="w3-center">
+      <button type="submit" class="w3-teal w3-border w3-center"><h3>ADD</h3></button>
+	   </div></p></form>
+         <p class="w3-center"><img src="{{url_for('static',filename='pic.png')}}" class="w3-circle" style="height:320px;width:320px" alt="Avatar"></p>
+         <hr>
+{% endif %}
+    </div>
+  </div>
+</div>  
+<div class="w3-col l3 w3-margin-top">
+      <div class="w3-container w3-content lead1" style="min-height:620px">
+        <div class="w3-container">
+         <p><div class="w3-container w3-center">
+	{% if visit %}
+	
+	{% else %}
+	<div class="w3-dropdown-hover w3-center">
+    <button class="w3-button w3-teal w3-padding-large" title="Notifications">Requests</button>     
+    <div class="w3-dropdown-content w3-white w3-card-12 w3-border">
+	{{message}}
+	   {% if reqst %}
+	   {% for x in reqst %}
+      <p>{{x[0]|title}} wants to join the group
+	     <p class = "w3-left">Details:</p>
+	     <li class = "w3-left">Father: {{x[1]}}</li>
+         <li class = "w3-left">Mother: {{x[2]}}</li>
+         <li class = "w3-left">Spouse: {{x[3]}}</li>
+         <li class = "w3-left">Family name: {{x[4]}}</li>
+	  
+	  </p>
+	  
+	  <div class="w3-bar w3-border">
+      <a href="/accept/{{x[0]}}/{{groupn}}/{{user}}" class="w3-bar-item w3-button w3-teal w3-border">YES</a>
+      <a href="/decline/{{x[0]}}/{{groupn}}/{{user}}" class="w3-bar-item w3-button w3-teal w3-border">NO</a>
+	   </div></p><hr class ="w3-black">{% endfor %} {% endif %}
+	  </div>
+  </div>
+  {% endif %}
+  <div class ="w3-content w3-center">
+       </p><br><br><hr><br>
+	   <h3>Members</h3>
+	   {% for y in mems %}
+	   <p>{{y[0]|title}}, {{y[1]}} of {{y[2]}}</p>
+	   {% endfor %}</div>
+      </div>
+      </div>
+   </div>
+  </div>
+</div>
+</body>
+</html>
