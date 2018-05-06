@@ -2,9 +2,9 @@
 
 A web development project for academic purpose.
 
-FRONT END
+FRONT END:
 HTML (HyperText Mark-up Language) CSS (Cascading Style Sheets)
 
-BACK END
+BACK END:
 PYTHON, SQLite
 
